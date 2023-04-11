@@ -1,0 +1,290 @@
+// Colores
+$input-active-border: hsl(249, 99%, 64%) to hsl(278, 94%, 30%);
+$input-error: hsl(0, 100%, 66%);
+$white-color: hsl(0, 0%, 100%);
+$light-violet: hsl(270, 3%, 87%);
+$dark-violet: hsl(279, 6%, 55%);
+$very-dark-violet: hsl(278, 68%, 11%);
+
+//Estilos Generales
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+
+  img {
+    width: 100%;
+    height: auto;
+  }
+
+  a {
+    text-decoration: none;
+    cursor: pointer;
+  }
+}
+
+// Estilos al Header
+.fondo {
+  width: 100%;
+  height: 60vw;
+  background-image: url("./images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+// Estilos al las Tarjetas
+.contenedor-tarjetas {
+  width: 90%;
+  height: 40vh;
+  top: 40px;
+  left: 5%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+
+  .reverso-tarjetas {
+    width: 80%;
+    position: relative;
+    display: flex;
+    align-self: flex-end;
+    order: 1;
+
+    p {
+      position: absolute;
+      margin: 0;
+      top: 45%;
+      right: 13%;
+      font-size: 2.3vw;
+      color: $white-color;
+    }
+  }
+  .frontal-tarjetas {
+    width: 80%;
+    position: relative;
+    top: -17vw;
+    display: flex;
+    order: 2;
+
+    p {
+      position: absolute;
+    }
+
+    @mixin tarjetaFrontal($top, $left, $textAlign) {
+      width: 100%;
+      top: $top;
+      left: $left;
+      text-align: $textAlign;
+      letter-spacing: 0.3vw;
+      padding: 0;
+      color: $white-color;
+    }
+    .tarjeta-numero {
+      font-size: 5vw;
+      @include tarjetaFrontal(40%, 0, center);
+    }
+    .tarjeta-nombre {
+      font-size: 3vw;
+      @include tarjetaFrontal(71%, 5vw, left);
+    }
+    .tarjeta-fecha {
+      font-size: 3vw;
+      @include tarjetaFrontal(71%, -4vw, right);
+    }
+
+    img:nth-of-type(2) {
+      position: absolute;
+      width: 13vw;
+      top: 12%;
+      left: 7%;
+    }
+  }
+}
+
+//Estilos al Formulario
+.disabled {
+  display: none;
+}
+
+.invalid {
+  border: medium solid $input-error;
+}
+
+.formulario-tarjetas {
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 20vw;
+
+  label,
+  input:not(.inline) {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+
+  input {
+    height: 70px;
+    border-radius: 10px;
+    border-style: solid;
+    margin: 10px 0 20px 0;
+    font-size: 3.8vw;
+    outline: none;
+
+    &:focus {
+      border-color: $very-dark-violet;
+    }
+  }
+
+  input[type="text"] {
+    padding-left: 15px;
+  }
+
+  .inline {
+    display: inline;
+  }
+
+  .input-flex {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
+    gap: 15px;
+  }
+
+  .boton-enviar {
+    font-family: "Space Grotesk", sans-serif;
+    background-color: $very-dark-violet;
+    color: $white-color;
+    border-radius: 15px;
+    padding: 20px 0;
+  }
+}
+
+//Estilos a la interfaz Thank you!
+.thanks-contenedor {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20vw;
+  margin-bottom: 20vw;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+
+  img {
+    width: 20vw;
+    margin-bottom: 30px;
+  }
+  h1 {
+    margin: 0;
+    letter-spacing: 8px;
+    text-align: center;
+  }
+  p {
+    margin-top: 15px;
+    letter-spacing: 1px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  #button-continue {
+    width: 80%;
+    margin-top: 35px;
+    padding: 15px;
+    background-color: $very-dark-violet;
+    color: $white-color;
+    font-size: 20px;
+    border-radius: 10px;
+    font-family: "Space Grotesk", sans-serif;
+  }
+}
+
+@media screen and (min-width: 1075px) {
+  body {
+    display: flex;
+  }
+
+  .fondo {
+    width: 35%;
+    height: 100vh;
+  }
+  .contenedor-principal {
+    display: flex;
+    flex-direction: row;
+
+    .contenedor-tarjetas {
+      width: 50%;
+      display: flex;
+      flex-direction: column;
+      left: 0;
+    }
+
+    .formulario-tarjetas {
+      width: 50%;
+      margin-top: 20vh;
+      margin-left: 35%;
+
+      input {
+        font-size: 18px;
+        margin-bottom: 10px;
+      }
+    }
+
+    .thanks-contenedor {
+      margin-top: 15vh;
+      margin-left: 30vw;
+      margin-bottom: 0;
+
+      #button-continue {
+        margin: 0;
+        margin-top: 1.5vw;
+      }
+
+      img {
+        width: 15vw;
+      }
+    }
+
+    .reverso-tarjetas {
+      width: 65%;
+      order: 2;
+      top: 6vw;
+
+      p {
+        top: 44%;
+        right: 4vw;
+        font-size: 1.3vw;
+      }
+    }
+
+    .frontal-tarjetas {
+      width: 65%;
+      order: 1;
+      top: 3vw;
+      left: 11vw;
+
+      .tarjeta-nombre {
+        font-size: 1.1vw;
+        top: 78%;
+        left: 2.1vw;
+      }
+      .tarjeta-numero {
+        font-size: 2vw;
+        top: 50%;
+      }
+      .tarjeta-fecha {
+        font-size: 1.1vw;
+        top: 78%;
+        left: -2vw;
+      }
+
+      img:nth-of-type(2) {
+        width: 6vw;
+      }
+    }
+  }
+}

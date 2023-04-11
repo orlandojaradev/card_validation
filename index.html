@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- displays site properly based on user's device -->
+
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <link rel="stylesheet" href="./estilos.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <title>Interactive card details form | Orlando Jara</title>
+</head>
+
+<body>
+  <div class="fondo"></div>
+  <main class="contenedor-principal">
+    <div class="contenedor-tarjetas">
+      <div class="reverso-tarjetas">
+        <img src="./images/bg-card-back.png" alt="reverso de tarjeta">
+        <p class="tarjeta-cvc">000</p>
+      </div>
+      <div class="frontal-tarjetas">
+        <img src="./images/bg-card-front.png" alt="frontal de tarjeta">
+        <img src="./images/card-logo.svg" alt="Logo tarjeta">
+        <p class="tarjeta-numero">0000 0000 0000 0000</p>
+        <p class="tarjeta-nombre">JANE APPLESEED</p>
+        <p class="tarjeta-fecha"><span class="tarjeta-month">00</span>/<span class="tarjeta-year">00</span></p>
+      </div>
+    </div>
+    <form class="formulario-tarjetas">
+      <label for="nombre">CARDHOLDER NAME</label>
+      <input type="text" id="nombre" pattern="^[A-Za-zÑñÁáÉéÍíÓóÚúÜü\s]+$"
+        title="El nombre debe contener sólo letras y espacios" placeholder="e.g. Jane Appleseed" required>
+      <label for="form-tarjeta">CARD NUMBER</label>
+      <input type="text" class="numero-tarjeta" id="form-tarjeta" title="El número de la tarjeta debe ser de 16 dígitos"
+        placeholder="e.g. 1234 5678 9123 0000" required>
+
+      <div class="contendor-fecha">
+        <label for="fecha">EXP. DATE (MM/YY)</label>
+        <label for="cvc">CVC</label>
+      </div>
+      <div class="input-flex">
+        <input type="text" class="inline month" id="fecha" maxlength="2" pattern="^[0-9]+$"
+          title="El mes debe ser introducido con 2 dígitos no mayor a 12" placeholder="MM" required>
+        <input type="text" class="inline year" id="date" maxlength="2" pattern="^[0-9]+$"
+          title="El año debe ser introducido con 2 dígitos no mayor a 12" placeholder="YY" required>
+        <input type="text" class="inline cvc" id="cvc" maxlength="3" pattern="^\d{3}$"
+          title="Este campo debe contener sólo 3 números" placeholder="e.g. 123" required>
+      </div>
+      <input class="boton-enviar" type="submit" value="Confirm">
+    </form>
+    <div class="thanks-contenedor">
+      <img src="./images/icon-complete.svg" alt="icon-complete">
+      <h1>THANK YOU!</h1>
+      <p>We've added your card details</p>
+      <button id="button-continue">Continue</button>
+    </div>
+  </main>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/cleave.js/1.6.0/cleave.min.js"
+    integrity="sha512-KaIyHb30iXTXfGyI9cyKFUIRSSuekJt6/vqXtyQKhQP6ozZEGY8nOtRS6fExqE4+RbYHus2yGyYg1BrqxzV6YA=="
+    crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+  <script type="module" src="./index.js"></script>
+</body>
+
+</html>

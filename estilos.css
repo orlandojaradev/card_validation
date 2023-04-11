@@ -1,0 +1,259 @@
+html {
+  box-sizing: border-box;
+  font-size: 18px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+*,
+::after,
+::before {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+}
+body img {
+  width: 100%;
+  height: auto;
+}
+body a {
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.fondo {
+  width: 100%;
+  height: 60vw;
+  background-image: url("./images/bg-main-mobile.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.contenedor-tarjetas {
+  width: 90%;
+  height: 40vh;
+  top: 40px;
+  left: 5%;
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+}
+.contenedor-tarjetas .reverso-tarjetas {
+  width: 80%;
+  position: relative;
+  display: flex;
+  align-self: flex-end;
+  order: 1;
+}
+.contenedor-tarjetas .reverso-tarjetas p {
+  position: absolute;
+  margin: 0;
+  top: 45%;
+  right: 13%;
+  font-size: 2.3vw;
+  color: hsl(0, 0%, 100%);
+}
+.contenedor-tarjetas .frontal-tarjetas {
+  width: 80%;
+  position: relative;
+  top: -17vw;
+  display: flex;
+  order: 2;
+}
+.contenedor-tarjetas .frontal-tarjetas p {
+  position: absolute;
+}
+.contenedor-tarjetas .frontal-tarjetas .tarjeta-numero {
+  font-size: 5vw;
+  width: 100%;
+  top: 40%;
+  left: 0;
+  text-align: center;
+  letter-spacing: 0.3vw;
+  padding: 0;
+  color: hsl(0, 0%, 100%);
+}
+.contenedor-tarjetas .frontal-tarjetas .tarjeta-nombre {
+  font-size: 3vw;
+  width: 100%;
+  top: 71%;
+  left: 5vw;
+  text-align: left;
+  letter-spacing: 0.3vw;
+  padding: 0;
+  color: hsl(0, 0%, 100%);
+}
+.contenedor-tarjetas .frontal-tarjetas .tarjeta-fecha {
+  font-size: 3vw;
+  width: 100%;
+  top: 71%;
+  left: -4vw;
+  text-align: right;
+  letter-spacing: 0.3vw;
+  padding: 0;
+  color: hsl(0, 0%, 100%);
+}
+.contenedor-tarjetas .frontal-tarjetas img:nth-of-type(2) {
+  position: absolute;
+  width: 13vw;
+  top: 12%;
+  left: 7%;
+}
+
+.disabled {
+  display: none;
+}
+
+.invalid {
+  border: medium solid hsl(0, 100%, 66%);
+}
+
+.formulario-tarjetas {
+  width: 85%;
+  margin: 0 auto;
+  margin-top: 20vw;
+}
+.formulario-tarjetas label,
+.formulario-tarjetas input:not(.inline) {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.formulario-tarjetas input {
+  height: 70px;
+  border-radius: 10px;
+  border-style: solid;
+  margin: 10px 0 20px 0;
+  font-size: 3.8vw;
+  outline: none;
+}
+.formulario-tarjetas input:focus {
+  border-color: hsl(278, 68%, 11%);
+}
+.formulario-tarjetas input[type=text] {
+  padding-left: 15px;
+}
+.formulario-tarjetas .inline {
+  display: inline;
+}
+.formulario-tarjetas .input-flex {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(18%, 1fr));
+  gap: 15px;
+}
+.formulario-tarjetas .boton-enviar {
+  font-family: "Space Grotesk", sans-serif;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  border-radius: 15px;
+  padding: 20px 0;
+}
+
+.thanks-contenedor {
+  width: 80%;
+  margin: 0 auto;
+  margin-top: 20vw;
+  margin-bottom: 20vw;
+  display: none;
+  flex-direction: column;
+  align-items: center;
+}
+.thanks-contenedor img {
+  width: 20vw;
+  margin-bottom: 30px;
+}
+.thanks-contenedor h1 {
+  margin: 0;
+  letter-spacing: 8px;
+  text-align: center;
+}
+.thanks-contenedor p {
+  margin-top: 15px;
+  letter-spacing: 1px;
+  font-size: 18px;
+  text-align: center;
+}
+.thanks-contenedor #button-continue {
+  width: 80%;
+  margin-top: 35px;
+  padding: 15px;
+  background-color: hsl(278, 68%, 11%);
+  color: hsl(0, 0%, 100%);
+  font-size: 20px;
+  border-radius: 10px;
+  font-family: "Space Grotesk", sans-serif;
+}
+
+@media screen and (min-width: 1075px) {
+  body {
+    display: flex;
+  }
+  .fondo {
+    width: 35%;
+    height: 100vh;
+  }
+  .contenedor-principal {
+    display: flex;
+    flex-direction: row;
+  }
+  .contenedor-principal .contenedor-tarjetas {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    left: 0;
+  }
+  .contenedor-principal .formulario-tarjetas {
+    width: 50%;
+    margin-top: 20vh;
+    margin-left: 35%;
+  }
+  .contenedor-principal .formulario-tarjetas input {
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  .contenedor-principal .thanks-contenedor {
+    margin-top: 15vh;
+    margin-left: 30vw;
+    margin-bottom: 0;
+  }
+  .contenedor-principal .thanks-contenedor #button-continue {
+    margin: 0;
+    margin-top: 1.5vw;
+  }
+  .contenedor-principal .thanks-contenedor img {
+    width: 15vw;
+  }
+  .contenedor-principal .reverso-tarjetas {
+    width: 65%;
+    order: 2;
+    top: 6vw;
+  }
+  .contenedor-principal .reverso-tarjetas p {
+    top: 44%;
+    right: 4vw;
+    font-size: 1.3vw;
+  }
+  .contenedor-principal .frontal-tarjetas {
+    width: 65%;
+    order: 1;
+    top: 3vw;
+    left: 11vw;
+  }
+  .contenedor-principal .frontal-tarjetas .tarjeta-nombre {
+    font-size: 1.1vw;
+    top: 78%;
+    left: 2.1vw;
+  }
+  .contenedor-principal .frontal-tarjetas .tarjeta-numero {
+    font-size: 2vw;
+    top: 50%;
+  }
+  .contenedor-principal .frontal-tarjetas .tarjeta-fecha {
+    font-size: 1.1vw;
+    top: 78%;
+    left: -2vw;
+  }
+  .contenedor-principal .frontal-tarjetas img:nth-of-type(2) {
+    width: 6vw;
+  }
+}/*# sourceMappingURL=estilos.css.map */
